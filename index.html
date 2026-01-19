@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive map visualization of LMIA (Labour Market Impact Assessment) applications across Canada. Filter by province and program stream to explore Temporary Foreign Worker Program data.">
+    <meta name="keywords" content="LMIA, Temporary Foreign Worker, TFW, Canada, immigration, labor market, visualization">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <title>To TFW or Not to TFW - LMIA Applications Visualization</title>
+    
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="container">
+        <header>
+            <h1>To TFW or not to TFW</h1>
+            <p>Visualizing LMIA applications across Canada.</p>
+        </header>
+        <main id="main-content">
+            <div class="form-group">
+                <label for="province" class="visually-hidden">Select Province or Territory</label>
+                <select name="province" id="province" class="dropdown-select" aria-label="Select Province or Territory">
+                    <option value="ON" selected>Ontario</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NU">Nunavut</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="YT">Yukon</option>
+                </select>
+                <label for="program-stream" class="visually-hidden">Select Program Stream</label>
+                <select name="program-stream" id="program-stream" class="dropdown-select" aria-label="Select Program Stream">
+                    <option value="all" selected>All</option>
+                    <option value="Low Wage">Low Wage</option>
+                    <option value="High Wage">High Wage</option>
+                    <option value="Primary Agriculture">Primary Agriculture</option>
+                    <option value="Global Talent Stream">Global Talent Stream</option>
+                </select>
+            </div>
+            <div id="map" role="application" aria-label="Interactive map showing LMIA applications" tabindex="0"></div>
+            <div id="map-status" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+        </main>
+        <footer>
+            <p>All data is from the 2025 Q3 government of Canada LMIA dataset. Source: <a href="https://open.canada.ca/data/en/dataset/90fed587-1364-4f33-a9ee-208181dc0b97">Open Government of Canada</a></p>
+            <p>Created by <a href="https://darianelwood.com/">Darian Elwood</a></p>
+            <p>Copyright © 2026 Darian Elwood</p>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
