@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tfw.darianelwood.com/sitemap.xml
